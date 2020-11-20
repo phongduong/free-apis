@@ -16,6 +16,31 @@ export default {
         name: 'description',
         content: 'A list of free APIs',
       },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'Free APIs',
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: 'Free APIs',
+      },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'A list of free APIs',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'Free APIs',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'A list of free APIs',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     script: [
