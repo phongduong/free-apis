@@ -32,6 +32,11 @@ export default {
         content: 'A list of free APIs',
       },
       {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://free-apis.vercel.app/',
+      },
+      {
         hid: 'twitter:title',
         name: 'twitter:title',
         content: 'Free APIs',
@@ -40,6 +45,11 @@ export default {
         hid: 'twitter:description',
         name: 'twitter:description',
         content: 'A list of free APIs',
+      },
+      {
+        hid: 'twitter:creator',
+        name: 'twitter:creator',
+        content: '@koo_gio',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
