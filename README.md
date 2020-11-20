@@ -1,20 +1,6 @@
 # free-apis
 
-## Build Setup
+A list of free APIs. You can get the list of APIs based on the name or category. It has the random feature.
 
-```bash
-# install dependencies
-$ yarn install
+I used the [Public API](https://github.com/davemachado/public-api) for this website.
 
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# build for production and launch server
-$ yarn build
-$ yarn start
-
-# generate static project
-$ yarn generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
