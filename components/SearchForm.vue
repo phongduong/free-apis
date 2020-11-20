@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { encodeParams } from '~/utils'
+
 export default {
   props: {
     formAction: {
@@ -54,18 +56,18 @@ export default {
     const { category = '', title = '' } = this.$route.query
 
     this.categories = categories
+
     this.category = decodeURIComponent(category)
     this.title = decodeURIComponent(title)
   },
   methods: {
     submit() {
-      const { title, category } = this
+      const { title, category } = encodeParams({
+        title: this.title,
+        category: this.category,
+      })
 
-      this.$router.push(
-        `?title=${encodeURIComponent(title)}&category=${encodeURIComponent(
-          category
-        )}`
-      )
+      this.$router.push(`?title=${title}&category=${category}`)
       this.$emit('submit', { title, category })
     },
   },

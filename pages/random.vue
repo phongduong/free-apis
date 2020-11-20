@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SearchForm @submit="submit" />
+    <SearchForm form-action="Generate" form-title="Random" @submit="submit" />
     <section v-if="entries" class="entry-list">
       <EntryItem
         v-for="(entry, index) in entries"
@@ -8,7 +8,6 @@
         :entry="entry"
       />
     </section>
-    <p v-else>Not found API</p>
   </div>
 </template>
 
@@ -18,33 +17,28 @@ import EntryItem from '@/components/EntryItem'
 import { encodeParams } from '~/utils'
 
 export default {
-  components: {
-    SearchForm,
-    EntryItem,
-  },
+  components: { SearchForm, EntryItem },
   data() {
-    return { title: '', category: '', entries: [] }
+    return {
+      category: '',
+      entries: [],
+    }
   },
   async mounted() {
-    const { category = '', title = '' } = this.$route.query
+    const { category = '' } = this.$route.query
 
-    await this.submit(
-      encodeParams({
-        category,
-        title,
-      })
-    )
+    await this.submit(encodeParams({ category }))
   },
   methods: {
     async submit(params) {
-      const { title, category } = params
       const { entries } = await this.$axios.$get(
-        `/entries?title=${title}&category=${category}`
+        `/random?category=${params.category}`
       )
+
       this.entries = entries
     },
   },
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style></style>
